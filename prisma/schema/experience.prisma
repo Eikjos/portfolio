@@ -1,0 +1,10 @@
+model Experience {
+  id Int @id @default(autoincrement())
+  position String
+  description String
+  technologies String
+  enterprise String
+  address String
+  startDate DateTime
+  endDate DateTime
+}

@@ -1,0 +1,9 @@
+model Project {
+  id Int @id @default(autoincrement())
+  name String
+  startDate DateTime
+  endDate DateTime
+  description String
+  technologies String
+  link String?
+}
