@@ -5,7 +5,7 @@ type CardProps = {
 
 const Card = ({ title, children }: CardProps) => {
   return (
-    <div className="sha p-1 w-96 rounded-sm shadow-lg shadow-gray-900">
+    <div className="sha p-1 w-96 rounded-sm shadow-lg shadow-gray-900 bg-secondary">
       <div className="w-full h-full">
         <div className="border-b-2 border-b-indigo-200 p-4">
           <h2 className="font-medium text-2xl text-center text-white">
