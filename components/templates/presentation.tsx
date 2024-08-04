@@ -6,8 +6,8 @@ export const Presentation = () => {
     <>
       <div className="flex flex-row items-center gap-20 justify-center">
         <PhotoMe size={250} />
-        <div className="flex flex-col w-1/2 gap-4">
-          <h1 className="font-semibold text-3xl bg-gradient-to-r from-indigo-500 to-primary bg-clip-text text-transparent border-b-2 border-b-indigo-500 pb-2">
+        <div className="flex flex-col w-1/2 gap-4 text-white">
+          <h1 className="font-semibold text-3xl border-b-2 pb-2">
             Thomas Hamelin
           </h1>
           <p>
@@ -22,7 +22,7 @@ export const Presentation = () => {
             <a
               href="https://www.linkedin.com/in/thomas-hamelin-74b919229/"
               target="_blank"
-              className="hover:border-b-indigo-400 hover:border-b-2 pb-2 hover:animate-shake"
+              className="hover:border-b-green-400 hover:border-b-2 pb-2 hover:animate-shake"
             >
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Image
@@ -37,7 +37,7 @@ export const Presentation = () => {
             <a
               href="https://github.com/Eikjos"
               target="_blank"
-              className="hover:border-b-indigo-400 hover:border-b-2 pb-2 hover:animate-shake"
+              className="hover:border-b-green-400 hover:border-b-2 pb-2 hover:animate-shake"
             >
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Image
@@ -51,7 +51,7 @@ export const Presentation = () => {
             </a>
             <a
               href="mailto:thomashamelin27@outlook.fr"
-              className="hover:border-b-indigo-400 hover:border-b-2 pb-2 rotate-0 hover:animate-shake"
+              className="hover:border-b-green-400 hover:border-b-2 pb-2 rotate-0 hover:animate-shake"
             >
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Image

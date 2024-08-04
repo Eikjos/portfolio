@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body>
+      <body className="bg-secondary">
         <Head>
           <meta
             name="viewport"

@@ -5,10 +5,10 @@ type CardProps = {
 
 const Card = ({ title, children }: CardProps) => {
   return (
-    <div className="sha p-1 w-96 rounded-md  shadow-lg shadow-indigo-500/50">
-      <div className="w-full h-full bg-white">
+    <div className="sha p-1 w-96 rounded-sm shadow-md shadow-slate-900">
+      <div className="w-full h-full">
         <div className="border-b-2 border-b-indigo-200 p-4">
-          <h2 className="font-medium text-2xl text-center text-indigo-800">
+          <h2 className="font-medium text-2xl text-center text-white">
             {title}
           </h2>
         </div>
