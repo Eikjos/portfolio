@@ -12,7 +12,7 @@ const Card = ({ title, children }: CardProps) => {
             {title}
           </h2>
         </div>
-        <div className="m-2 overflow-y-scroll max-h-56 flex flex-col gap-2 scrollbar-hide">
+        <div className="m-2 overflow-y-scroll max-h-56 flex flex-col gap-2">
           {children}
         </div>
       </div>

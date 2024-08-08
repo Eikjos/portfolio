@@ -1,0 +1,7 @@
+model Appointment { 
+  id Int @id @default(autoincrement())
+  subject String
+  message String
+  date DateTime
+  email String
+}
