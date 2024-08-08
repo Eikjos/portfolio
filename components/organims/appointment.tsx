@@ -22,7 +22,7 @@ const AppointmentSchema = z.object({
 }) satisfies z.ZodType<AppointmentData>;
 
 const Appointment = () => {
-  const [date, setDate] = useState<Date>(daysjs().add(3, "day").toDate());
+  const [date, setDate] = useState<Date>();
   const form = useForm<AppointmentData>({
     resolver: zodResolver(AppointmentSchema),
     defaultValues: {
