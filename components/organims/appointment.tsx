@@ -47,6 +47,7 @@ const Appointment = () => {
           locale={fr}
           disabled={{
             before: daysjs().add(3, "day").toDate(),
+            dayOfWeek: [6, 0],
           }}
           selected={date}
           onSelect={onChangeDate}
