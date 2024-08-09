@@ -2,6 +2,7 @@
 
 import { AppointmentData } from "@/types/appointment";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Appointment as AppointmentEntity } from "@prisma/client";
 import { fr } from "date-fns/locale";
 import daysjs from "dayjs";
 import { useState } from "react";
@@ -21,7 +22,41 @@ const AppointmentSchema = z.object({
   date: z.date({ required_error: "Required" }),
 }) satisfies z.ZodType<AppointmentData>;
 
+const getAppointmentsByDate = async (
+  date: Date
+): Promise<AppointmentEntity[]> => {
+  const response = await fetch(`/api/appointments?date=${date.toISOString()}`);
+  const appointments = (await response.json()) as AppointmentEntity[];
+  return appointments;
+};
+
+const getAvailableDate = async (date: Date) => {
+  const appointments = await getAppointmentsByDate(date).then((items) =>
+    items.map((item) => item.date)
+  );
+  const startDate = new Date(date.setHours(9, 30, 0, 0));
+  const endDate = new Date(date.setHours(17, 30, 0, 0));
+  const invalidDates: Date[] = [
+    new Date(date.setHours(12, 0, 0, 0)),
+    new Date(date.setHours(12, 30, 0, 0)),
+    new Date(date.setHours(13, 0, 0, 0)),
+    new Date(date.setHours(13, 30, 0, 0)),
+    new Date(date.setHours(14, 0, 0, 0)),
+    ...appointments,
+  ];
+  const initialValues = [];
+  let currentDate = startDate;
+  while (currentDate <= endDate) {
+    if (!invalidDates.some((e) => e.getTime() === currentDate.getTime())) {
+      initialValues.push(currentDate);
+    }
+    currentDate = daysjs(currentDate.toString()).add(30, "minute").toDate();
+  }
+  return initialValues;
+};
+
 const Appointment = () => {
+  const [availableDates, setAvailablesDate] = useState<Date[]>([]);
   const [date, setDate] = useState<Date>();
   const form = useForm<AppointmentData>({
     resolver: zodResolver(AppointmentSchema),
@@ -33,7 +68,17 @@ const Appointment = () => {
     },
   });
 
-  const onChangeDate = (value: Date | undefined) => setDate(value!);
+  const onChangeDate = async (value: Date | undefined) => {
+    setDate(value!);
+    if (value === undefined) {
+      setAvailablesDate([]);
+    } else {
+      getAvailableDate(value!).then((items) => {
+        console.log("allo");
+        setAvailablesDate(items);
+      });
+    }
+  };
 
   const onSubmit = (value: AppointmentData) => {
     console.log(value);
@@ -41,7 +86,7 @@ const Appointment = () => {
 
   return (
     <div className="w-1/2 mx-auto p-10 flex flex-row gap-10 rounded-2xl shadow-xl shadow-gray-900 bg-secondary">
-      <div>
+      <div className="w-1/2">
         <Calendar
           mode="single"
           locale={fr}
@@ -53,23 +98,7 @@ const Appointment = () => {
           onSelect={onChangeDate}
           className="text-white border-2 border-white p-4 rounded-lg"
         />
-        <TimePicker
-          className="mt-5"
-          values={[
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date(),
-          ]}
-        />
+        <TimePicker className="mt-5" values={availableDates} />
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-1/2">
@@ -97,7 +126,7 @@ const Appointment = () => {
             placeholder="Adresse mail"
             className="mt-2"
           />
-          <p className="text-white mt-4 text-xs">
+          <p className="text-white mt-4 text-sm">
             Je vous recontacterais le plutôt possible pour confirmer le
             rendez-vous.
           </p>

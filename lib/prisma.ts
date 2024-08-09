@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { Appointment, PrismaClient } from "@prisma/client";
 
 const prismaClientSingleton = () => {
   return new PrismaClient();
@@ -41,5 +41,16 @@ export async function getProjects() {
         startDate: "asc",
       },
     ],
+  });
+}
+
+export async function getAppointmentByDate(date: Date): Promise<Appointment[]> {
+  return await prisma.appointment.findMany({
+    where: {
+      date: {
+        gte: new Date(date.setHours(0, 0, 0, 0)),
+        lt: new Date(date.setHours(23, 59, 59, 999)),
+      },
+    },
   });
 }

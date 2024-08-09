@@ -11,6 +11,7 @@ export const PhotoMe = ({ size }: PhotoMeProps) => {
     >
       <Image
         src="/assets/me.png"
+        priority
         width={size}
         height={size}
         alt="photo of me"

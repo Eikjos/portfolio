@@ -7,6 +7,16 @@ type TimePickerProps = {
 };
 
 const TimePicker = ({ values, className }: TimePickerProps) => {
+  if (values.length === 0) {
+    return (
+      <div className="mt-4">
+        <p className="text-xs">
+          Veuillez sélectionner une date sur le calendrier pour voir les
+          horaires disponibles.
+        </p>
+      </div>
+    );
+  }
   return (
     <div
       className={twMerge(
