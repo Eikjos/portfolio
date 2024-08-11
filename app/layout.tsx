@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.css";
@@ -22,6 +23,7 @@ export default function RootLayout({
           ></meta>
         </Head>
         {children}
+        <Toaster />
       </body>
     </html>
   );

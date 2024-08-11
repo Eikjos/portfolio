@@ -1,5 +1,6 @@
 "use client";
 
+import { useToast } from "@/components/ui/use-toast";
 import { AppointmentData } from "@/types/appointment";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Appointment as AppointmentEntity } from "@prisma/client";
@@ -18,7 +19,7 @@ import { Textarea } from "../ui/textarea";
 const AppointmentSchema = z.object({
   subject: z.string().min(1, "Required"),
   message: z.string().min(1, "Required"),
-  email: z.string().min(1, "Required"),
+  email: z.string().email("Adresse mail est incorrecte").min(1, "Required"),
   date: z.date({ required_error: "Required" }),
 }) satisfies z.ZodType<AppointmentData>;
 
@@ -32,7 +33,7 @@ const getAppointmentsByDate = async (
 
 const getAvailableDate = async (date: Date) => {
   const appointments = await getAppointmentsByDate(date).then((items) =>
-    items.map((item) => item.date)
+    items.map((item) => new Date(item.date))
   );
   const startDate = new Date(date.setHours(9, 30, 0, 0));
   const endDate = new Date(date.setHours(17, 30, 0, 0));
@@ -58,6 +59,7 @@ const getAvailableDate = async (date: Date) => {
 const Appointment = () => {
   const [availableDates, setAvailablesDate] = useState<Date[]>([]);
   const [date, setDate] = useState<Date>();
+  const { toast } = useToast();
   const form = useForm<AppointmentData>({
     resolver: zodResolver(AppointmentSchema),
     defaultValues: {
@@ -81,7 +83,22 @@ const Appointment = () => {
   };
 
   const onSubmit = (value: AppointmentData) => {
-    console.log(value);
+    fetch("/api/appointments", {
+      method: "POST",
+      body: JSON.stringify(value),
+    })
+      .then(() => {
+        console.log("réussi");
+        toast({
+          title: "Demande de rendez-vous envoyée",
+          description:
+            "Je reviendrai vers vous au plus vite pour confirmer le rendez vous",
+          duration: 3000,
+        });
+      })
+      .catch(() => {
+        console.log("échec");
+      });
   };
 
   return (
@@ -90,10 +107,12 @@ const Appointment = () => {
         <Calendar
           mode="single"
           locale={fr}
-          disabled={{
-            before: daysjs().add(3, "day").toDate(),
-            dayOfWeek: [6, 0],
-          }}
+          disabled={[
+            {
+              before: daysjs().add(3, "day").toDate(),
+            },
+            { dayOfWeek: [0, 6] },
+          ]}
           selected={date}
           onSelect={onChangeDate}
           className="text-white border-2 border-white p-4 rounded-lg"
