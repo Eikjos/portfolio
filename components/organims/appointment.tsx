@@ -98,7 +98,13 @@ const Appointment = () => {
           onSelect={onChangeDate}
           className="text-white border-2 border-white p-4 rounded-lg"
         />
-        <TimePicker className="mt-5" values={availableDates} />
+        <TimePicker
+          name="date"
+          className="mt-5"
+          values={availableDates}
+          register={form.register}
+          errorMessage={form.formState.errors.date?.message}
+        />
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-1/2">
