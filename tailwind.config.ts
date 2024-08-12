@@ -60,8 +60,10 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: { height: "0", display: "none", opacity: "0" },
+          "10%": { display: "block" },
+          "50%": { opacity: "0.5" },
+          to: { height: "auto", display: "block", opacity: "1" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
@@ -75,7 +77,7 @@ const config = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-down": "accordion-down 0.15s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shake: "shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both",
         "spin-no-infinite": "spin 1.8s cubic-bezier(0.36, 0.07, 0.19, 0.97)",

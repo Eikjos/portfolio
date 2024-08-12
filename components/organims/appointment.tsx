@@ -152,7 +152,7 @@ const Appointment = () => {
             className="mt-2"
           />
           <p className="text-white mt-4 text-sm">
-            Je vous recontacterais le plutôt possible pour confirmer le
+            Je vous recontacterais le plus tôt possible pour confirmer le
             rendez-vous.
           </p>
           <div className="mt-10">

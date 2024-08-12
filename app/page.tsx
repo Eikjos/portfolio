@@ -17,71 +17,112 @@ export default function Home() {
             <ListItem
               title="React"
               imageUrl="/assets/React.png"
-              imageAlt="logo"
+              imageAlt="Logo React"
             />
             <ListItem
               title="Angular"
               imageUrl="/assets/Angular.png"
-              imageAlt="logo"
+              imageAlt="Logo Angular"
+            />
+            <ListItem
+              title="React Native"
+              imageUrl="/assets/React.png"
+              imageAlt="Logo React Native"
             />
             <ListItem
               title="Next"
               imageUrl="/assets/Next.png"
-              imageAlt="logo"
+              imageAlt="Logo Next"
             />
             <ListItem
               title="Tailwind"
               imageUrl="/assets/Tailwind.png"
-              imageAlt="logo"
+              imageAlt="Logo Tailwind"
             />
             <ListItem
               title="Nest JS"
               imageUrl="/assets/Nest.png"
-              imageAlt="logo"
+              imageAlt="Logo NestJS"
             />
             <ListItem
               title="Adonis JS"
               imageUrl="/assets/AdonisJS.png"
-              imageAlt="logo"
+              imageAlt="Logo Adonis JS"
             />
             <ListItem
               title="Spring boot (Kotlin/Java)"
               imageUrl="/assets/Spring.png"
-              imageAlt="logo"
+              imageAlt="Logo Spring Boot"
             />
             <ListItem
-              title="PostgresSQL"
+              title="PostgreSQL"
               imageUrl="/assets/PostgresSQL.png"
-              imageAlt="logo"
+              imageAlt="Logo PostgreSQL"
             />
             <ListItem
               title="Docker"
               imageUrl="/assets/Docker.png"
-              imageAlt="logo"
+              imageAlt="Logo Docker"
             />
           </Card>
           <Card title="Projets">
             <ListItem
-              title="React"
-              imageUrl="/assets/github.png"
-              imageAlt="logo"
+              title="Ollcavis"
+              imageUrl="/assets/ollcavis.png"
+              imageAlt="Logo d'ollcavis"
+              description="<h4 class='font-bold text-md mb-2'>Septembre 2023 - Avril 2024</h4>
+              <p>Project réalisé pendant le Master 2 de Génie Informatique et Logiciel consistant
+               à créer une plateforme de gestion des avis sur la plateforme Ollca. 
+               Réalise avec une architecture micro-service avec Kafka et Spring boot. 
+               Et Angular pour l'application cliente avec développement de web components.</p>"
+            />
+            <ListItem
+              title="Open Observatory"
+              imageUrl="/assets/open-observatory.png"
+              imageAlt="Logo Open Observatory"
+              description="<h4 class='font-bold text-md mb-2'>Janvier 2022 - Avril 2023</h4>
+              <p>Project réalisé pendant le Master 1 de Génie Informatique et Logiciel consistant
+               à créer une plateforme de partage d'observation d'objet céleste en PWA avec la librarie React. Et Spring Boot pour le développement de l'API.</p>"
             />
           </Card>
           <Card title="Expériences">
             <ListItem
-              title="React"
-              imageUrl="/assets/github.png"
-              imageAlt="logo"
+              title="Proxiad Axe Seine"
+              imageUrl="/assets/proxiad.png"
+              imageAlt="Logo Proxiad Axe Seine"
+              description="<h4 class='font-bold text-md'>Juin 2023 - aujourd'hui</h4>
+              <span class='font-bold text-[10px]'>Stagiaire + Alerternant développeur web et mobile</span>
+              <ul class='mt-2 pl-5'>
+                <li class='list-disc'>Développement d'application mobile</li>
+                <li class='list-disc'>Développement d'API</li>
+                <li class='list-disc'>Développement d'application cliente</li>
+              </ul>
+              "
             />
             <ListItem
-              title="React"
-              imageUrl="/assets/github.png"
-              imageAlt="logo"
+              title="FTEL Edition"
+              imageUrl="/assets/ftel.png"
+              imageAlt="Logo FTEL Edition"
+              description="<h4 class='font-bold text-md'>Avril 2022 - Mai 2023</h4>
+              <span class='font-bold text-[10px]'>Stagiaire + CDD étudiant Développeur web et mobile</span>
+              <ul class='mt-2 pl-5'>
+                <li class='list-disc'>Développement d'application mobile</li>
+                <li class='list-disc'>Test unitaires et d'intégration</li>
+                <li class='list-disc'>Développement sur l'application <strong>Pronostic Games</strong></li>
+              </ul>
+              "
             />
             <ListItem
-              title="React"
-              imageUrl="/assets/github.png"
-              imageAlt="logo"
+              title="E.Leclerc"
+              imageUrl="/assets/leclerc.png"
+              imageAlt="Logo E.Leclerc"
+              description="<h4 class='font-bold text-md'>Juillet 2019 - Septembre 2022</h4>
+              <span class='font-bold text-[10px]'>CDI étudiant Hôte de caisse</span>
+              <ul class='mt-2 pl-5'>
+                <li class='list-disc'>Relation client/li>
+                <li class='list-disc'>Poste à responsabilité</li>
+              </ul>
+              "
             />
           </Card>
         </div>

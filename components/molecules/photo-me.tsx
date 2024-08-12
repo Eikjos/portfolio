@@ -7,7 +7,7 @@ type PhotoMeProps = {
 export const PhotoMe = ({ size }: PhotoMeProps) => {
   return (
     <div
-      className={`w-[${size}px] h-[${size}px] rounded-full overflow-hidden bg-gray-800 animate-spin-no-infinite`}
+      className={`w-[${size}px] h-[${size}px] rounded-full overflow-hidden bg-gray-800`}
     >
       <Image
         src="/assets/me.png"
