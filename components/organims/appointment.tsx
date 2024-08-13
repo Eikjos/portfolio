@@ -102,7 +102,7 @@ const Appointment = () => {
 
   return (
     <div className="sm:w-5/6 md:w-2/3  w-full md:mx-auto md:p-10 p-4 flex md:flex-row flex-col gap-10 rounded-2xl shadow-xl shadow-gray-900 bg-secondary">
-      <div className="md:w-1/2 w-4/5 mx-auto">
+      <div className="mx-auto">
         <Calendar
           mode="single"
           locale={fr}
@@ -114,7 +114,7 @@ const Appointment = () => {
           ]}
           selected={date}
           onSelect={onChangeDate}
-          className="text-white border-2 border-white p-4 rounded-lg"
+          className="text-white flex justify-center"
         />
         <TimePicker
           name="date"
