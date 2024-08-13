@@ -3,7 +3,6 @@
 import { useToast } from "@/components/ui/use-toast";
 import { AppointmentData } from "@/types/appointment";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Appointment as AppointmentEntity } from "@prisma/client";
 import { fr } from "date-fns/locale";
 import daysjs from "dayjs";
 import { useState } from "react";
@@ -23,18 +22,18 @@ const AppointmentSchema = z.object({
   date: z.date({ required_error: "Required" }),
 }) satisfies z.ZodType<AppointmentData>;
 
-const getAppointmentsByDate = async (
-  date: Date
-): Promise<AppointmentEntity[]> => {
-  const response = await fetch(`/api/appointments?date=${date.toISOString()}`);
-  const appointments = (await response.json()) as AppointmentEntity[];
-  return appointments;
-};
+// const getAppointmentsByDate = async (
+//   date: Date
+// ): Promise<AppointmentEntity[]> => {
+//   const response = await fetch(`/api/appointments?date=${date.toISOString()}`);
+//   const appointments = (await response.json()) as AppointmentEntity[];
+//   return appointments;
+// };
 
 const getAvailableDate = async (date: Date) => {
-  const appointments = await getAppointmentsByDate(date).then((items) =>
-    items.map((item) => new Date(item.date))
-  );
+  // const appointments = await getAppointmentsByDate(date).then((items) =>
+  //   items.map((item) => new Date(item.date))
+  // );
   const startDate = new Date(date.setHours(9, 30, 0, 0));
   const endDate = new Date(date.setHours(17, 30, 0, 0));
   const invalidDates: Date[] = [
@@ -43,7 +42,7 @@ const getAvailableDate = async (date: Date) => {
     new Date(date.setHours(13, 0, 0, 0)),
     new Date(date.setHours(13, 30, 0, 0)),
     new Date(date.setHours(14, 0, 0, 0)),
-    ...appointments,
+    // ...appointments,
   ];
   const initialValues = [];
   let currentDate = startDate;
@@ -102,8 +101,8 @@ const Appointment = () => {
   };
 
   return (
-    <div className="w-1/2 mx-auto p-10 flex flex-row gap-10 rounded-2xl shadow-xl shadow-gray-900 bg-secondary">
-      <div className="w-1/2">
+    <div className="sm:w-5/6 md:w-2/3  w-full md:mx-auto md:p-10 p-4 flex md:flex-row flex-col gap-10 rounded-2xl shadow-xl shadow-gray-900 bg-secondary">
+      <div className="md:w-1/2 w-4/5 mx-auto">
         <Calendar
           mode="single"
           locale={fr}
@@ -126,7 +125,10 @@ const Appointment = () => {
         />
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-1/2">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="md:w-1/2 w-full"
+        >
           <h3 className="text-2xl text-white font-semibold">Contactez-moi</h3>
           <Input
             name="subject"

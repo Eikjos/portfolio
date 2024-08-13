@@ -4,9 +4,9 @@ import { PhotoMe } from "../molecules/photo-me";
 export const Presentation = () => {
   return (
     <>
-      <div className="flex flex-row items-center gap-20 justify-center">
+      <div className="flex md:flex-row flex-col items-center gap-20 justify-center">
         <PhotoMe size={250} />
-        <div className="flex flex-col w-1/2 gap-4 text-white">
+        <div className="flex flex-col md:w-1/2 gap-4 text-white w-3/4">
           <h1 className="font-semibold text-3xl border-b-2 pb-2">
             Thomas Hamelin
           </h1>
@@ -22,7 +22,7 @@ export const Presentation = () => {
             <a
               href="https://www.linkedin.com/in/thomas-hamelin-74b919229/"
               target="_blank"
-              className="hover:border-b-blue-900 hover:border-b-2 pb-2 hover:animate-shake"
+              className="hover:border-b-blue-900 hover:border-b-2 pb-2 hover:animate-shake text-sm md:text-md"
             >
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Image
@@ -37,7 +37,7 @@ export const Presentation = () => {
             <a
               href="https://github.com/Eikjos"
               target="_blank"
-              className="hover:border-b-blue-900 hover:border-b-2 pb-2 hover:animate-shake"
+              className="hover:border-b-blue-900 hover:border-b-2 pb-2 hover:animate-shake text-sm md:text-md"
             >
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Image
@@ -51,7 +51,7 @@ export const Presentation = () => {
             </a>
             <a
               href="mailto:thomashamelin27@outlook.fr"
-              className="hover:border-b-blue-900 hover:border-b-2 pb-2 rotate-0 hover:animate-shake"
+              className="hover:border-b-blue-900 hover:border-b-2 pb-2 rotate-0 hover:animate-shake text-sm md:text-md"
             >
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Image
