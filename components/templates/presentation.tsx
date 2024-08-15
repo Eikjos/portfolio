@@ -28,7 +28,7 @@ export const Presentation = () => {
                 <Image
                   width={20}
                   height={20}
-                  src="/assets/linkedin.png"
+                  src="./assets/linkedin.png"
                   alt="liknkedin logo"
                 />
                 <span>Thomas Hamelin</span>
@@ -43,7 +43,7 @@ export const Presentation = () => {
                 <Image
                   width={20}
                   height={20}
-                  src="/assets/github.png"
+                  src="./assets/github.png"
                   alt="github logo"
                 />
                 <span>Thomas Hamelin</span>
@@ -57,7 +57,7 @@ export const Presentation = () => {
                 <Image
                   width={20}
                   height={20}
-                  src="/assets/mail.png"
+                  src="./assets/mail.png"
                   alt="mail logo"
                 />
                 <span>Thomas Hamelin</span>

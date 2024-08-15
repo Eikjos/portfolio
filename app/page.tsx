@@ -16,59 +16,59 @@ export default function Home() {
           <Card title="Compétences">
             <ListItem
               title="React"
-              imageUrl="/assets/React.png"
+              imageUrl="./assets/React.png"
               imageAlt="Logo React"
             />
             <ListItem
               title="Angular"
-              imageUrl="/assets/Angular.png"
+              imageUrl="./assets/Angular.png"
               imageAlt="Logo Angular"
             />
             <ListItem
               title="React Native"
-              imageUrl="/assets/React.png"
+              imageUrl="./assets/React.png"
               imageAlt="Logo React Native"
             />
             <ListItem
               title="Next"
-              imageUrl="/assets/Next.png"
+              imageUrl="./assets/Next.png"
               imageAlt="Logo Next"
             />
             <ListItem
               title="Tailwind"
-              imageUrl="/assets/Tailwind.png"
+              imageUrl="./assets/Tailwind.png"
               imageAlt="Logo Tailwind"
             />
             <ListItem
               title="Nest JS"
-              imageUrl="/assets/Nest.png"
+              imageUrl="./assets/Nest.png"
               imageAlt="Logo NestJS"
             />
             <ListItem
               title="Adonis JS"
-              imageUrl="/assets/AdonisJS.png"
+              imageUrl="./assets/AdonisJS.png"
               imageAlt="Logo Adonis JS"
             />
             <ListItem
               title="Spring boot (Kotlin/Java)"
-              imageUrl="/assets/Spring.png"
+              imageUrl="./assets/Spring.png"
               imageAlt="Logo Spring Boot"
             />
             <ListItem
               title="PostgreSQL"
-              imageUrl="/assets/PostgresSQL.png"
+              imageUrl="./assets/PostgresSQL.png"
               imageAlt="Logo PostgreSQL"
             />
             <ListItem
               title="Docker"
-              imageUrl="/assets/Docker.png"
+              imageUrl="./assets/Docker.png"
               imageAlt="Logo Docker"
             />
           </Card>
           <Card title="Projets">
             <ListItem
               title="Ollcavis"
-              imageUrl="/assets/ollcavis.png"
+              imageUrl="./assets/ollcavis.png"
               imageAlt="Logo d'ollcavis"
               description="<h4 class='font-bold text-md mb-2'>Septembre 2023 - Avril 2024</h4>
               <p>Project réalisé pendant le Master 2 de Génie Informatique et Logiciel consistant
@@ -78,7 +78,7 @@ export default function Home() {
             />
             <ListItem
               title="Open Observatory"
-              imageUrl="/assets/open-observatory.png"
+              imageUrl="./assets/open-observatory.png"
               imageAlt="Logo Open Observatory"
               description="<h4 class='font-bold text-md mb-2'>Janvier 2022 - Avril 2023</h4>
               <p>Project réalisé pendant le Master 1 de Génie Informatique et Logiciel consistant
@@ -88,7 +88,7 @@ export default function Home() {
           <Card title="Expériences">
             <ListItem
               title="Proxiad Axe Seine"
-              imageUrl="/assets/proxiad.png"
+              imageUrl="./assets/proxiad.png"
               imageAlt="Logo Proxiad Axe Seine"
               description="<h4 class='font-bold text-md'>Juin 2023 - aujourd'hui</h4>
               <span class='font-bold text-[10px]'>Stagiaire + Alerternant développeur web et mobile</span>
@@ -101,7 +101,7 @@ export default function Home() {
             />
             <ListItem
               title="FTEL Edition"
-              imageUrl="/assets/ftel.png"
+              imageUrl="./assets/ftel.png"
               imageAlt="Logo FTEL Edition"
               description="<h4 class='font-bold text-md'>Avril 2022 - Mai 2023</h4>
               <span class='font-bold text-[10px]'>Stagiaire + CDD étudiant Développeur web et mobile</span>
@@ -114,7 +114,7 @@ export default function Home() {
             />
             <ListItem
               title="E.Leclerc"
-              imageUrl="/assets/leclerc.png"
+              imageUrl="./assets/leclerc.png"
               imageAlt="Logo E.Leclerc"
               description="<h4 class='font-bold text-md'>Juillet 2019 - Septembre 2022</h4>
               <span class='font-bold text-[10px]'>CDI étudiant Hôte de caisse</span>
