@@ -31,7 +31,7 @@ jobs:
         run: pnpm install
 
       - name: Generate Prisma Client
-        run: pnpm run prisma:generate
+        run: npx prisma generate
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
