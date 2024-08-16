@@ -70,9 +70,9 @@ export default function Home() {
               imageUrl="assets//ollcavis.png"
               imageAlt="Logo d'ollcavis"
               description="<h4 class='font-bold text-md mb-2'>Septembre 2023 - Avril 2024</h4>
-              <p>Project réalisé pendant le Master 2 de Génie Informatique et Logiciel consistant
+              <p>Projet réalisé pendant le Master 2 de Génie Informatique et Logiciel consistant
                à créer une plateforme de gestion des avis sur la plateforme Ollca. 
-               Réalise avec une architecture micro-service avec Kafka et Spring boot. 
+               Réalisé avec une architecture micro-service avec Kafka et Spring boot. 
                Et Angular pour l'application cliente avec développement de web components.</p>"
             />
             <ListItem
@@ -80,7 +80,7 @@ export default function Home() {
               imageUrl="assets//open-observatory.png"
               imageAlt="Logo Open Observatory"
               description="<h4 class='font-bold text-md mb-2'>Janvier 2022 - Avril 2023</h4>
-              <p>Project réalisé pendant le Master 1 de Génie Informatique et Logiciel consistant
+              <p>Projet réalisé pendant le Master 1 de Génie Informatique et Logiciel consistant
                à créer une plateforme de partage d'observation d'objet céleste en PWA avec la librarie React. Et Spring Boot pour le développement de l'API.</p>"
             />
           </Card>
