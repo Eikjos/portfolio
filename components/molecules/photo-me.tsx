@@ -10,7 +10,7 @@ export const PhotoMe = ({ size }: PhotoMeProps) => {
       className={`w-[${size}px] h-[${size}px] rounded-full overflow-hidden bg-gray-800`}
     >
       <Image
-        src="/portfolio/assets/me.png"
+        src="assets//me.png"
         priority
         width={size}
         height={size}
