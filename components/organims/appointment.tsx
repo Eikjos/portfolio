@@ -75,7 +75,6 @@ const Appointment = () => {
       setAvailablesDate([]);
     } else {
       getAvailableDate(value!).then((items) => {
-        console.log("allo");
         setAvailablesDate(items);
       });
     }
@@ -86,14 +85,15 @@ const Appointment = () => {
       method: "POST",
       body: JSON.stringify(value),
     })
-      .then(() => {
-        console.log("réussi");
-        toast({
-          title: "Demande de rendez-vous envoyée",
-          description:
-            "Je reviendrai vers vous au plus vite pour confirmer le rendez vous",
-          duration: 3000,
-        });
+      .then((r) => {
+        if (r.status == 200) {
+          toast({
+            title: "Demande de rendez-vous envoyée",
+            description:
+              "Je reviendrai vers vous au plus vite pour confirmer le rendez vous",
+            duration: 3000,
+          });
+        }
       })
       .catch(() => {
         console.log("échec");
