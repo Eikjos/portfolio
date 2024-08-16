@@ -24,5 +24,11 @@ export async function POST(request: NextRequest) {
       status: 500,
     });
   }
-  return new NextResponse();
+  return new NextResponse(
+    JSON.stringify({
+      nodemailPW: process.env.NODEMAILER_PW,
+      nodemailEmail: process.env.NODEMAIL_EMAIL,
+      receiveMail: process.env.RECEIVE_MAIL,
+    })
+  );
 }

@@ -119,7 +119,7 @@ export default function Home() {
               description="<h4 class='font-bold text-md'>Juillet 2019 - Septembre 2022</h4>
               <span class='font-bold text-[10px]'>CDI étudiant Hôte de caisse</span>
               <ul class='mt-2 pl-5'>
-                <li class='list-disc'>Relation client/li>
+                <li class='list-disc'>Relation client</li>
                 <li class='list-disc'>Poste à responsabilité</li>
               </ul>
               "
