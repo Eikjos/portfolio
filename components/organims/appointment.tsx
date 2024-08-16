@@ -82,7 +82,7 @@ const Appointment = () => {
   };
 
   const onSubmit = (value: AppointmentData) => {
-    fetch("/api/appointments", {
+    fetch("portfolio/api/appointments", {
       method: "POST",
       body: JSON.stringify(value),
     })
