@@ -38,6 +38,8 @@ jobs:
         with:
           static_site_generator: next
 
+      - name: Test environment
+        run: echo ${{ secrets.NODEMAILER_EMAIL }} ${{ secrets.NODEMAILER_PW }} ${{ secrets.RECEIVE_MAIL }}
       - name: Build with Next.js 🏗️
         run: pnpm build
         env:
