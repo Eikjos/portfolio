@@ -1,5 +1,4 @@
 import { ListItem } from "@/components/molecules/list-item";
-import { Appointment } from "@/components/organims/appointment";
 import { Card } from "@/components/templates/card";
 import { Presentation } from "@/components/templates/presentation";
 
@@ -127,9 +126,7 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <div className="mt-20 md:mb-20 mb-36">
-        <Appointment />
-      </div>
+      <div className="mt-20 md:mb-20 mb-36">{/* <Appointment /> */}</div>
       <div className="absolute hidden md:block -bottom-52 right-60 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(80%_0%,91%_92%,50%_100%,4%_50%)]"></div>
       <div className="absolute hidden md:block -bottom-1/2 right-3/4 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(20%_0%,91%_20%,50%_100%,4%_50%)]"></div>
       <div className="absolute hidden md:block -bottom-32 left-1/3 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(20%_0%,91%_20%,50%_100%,4%_50%)]"></div>
