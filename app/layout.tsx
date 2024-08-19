@@ -21,7 +21,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         ></meta>
       </head>
-      <body className="w-screen overflow-hidden">
+      <body>
         <Head>
           <title>Thomas Hamelin | Portfolio</title>
         </Head>
