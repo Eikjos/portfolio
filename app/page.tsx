@@ -11,7 +11,7 @@ export default function Home() {
       <div className="absolute top-2/3 md:left-2/3 -right-0 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(20%_0%,91%_20%,50%_100%,4%_50%)]"></div>
       <div className="pt-14">
         <Presentation />
-        <div className="flex flex-col md:flex-row mx-auto gap-10 justify-center mt-16 px-4 md:w-3/4 w-full flex-wrap">
+        <div className="flex flex-col md:flex-row gap-10 justify-center mt-16 md:w3/4 w-full flex-wrap">
           <Card title="Compétences">
             <ListItem
               title="React"
@@ -126,7 +126,9 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <div className="mt-20 md:mb-20 mb-36">{/* <Appointment /> */}</div>
+      {/* <div className="mt-20 md:mb-20 mb-36">
+        <Appointment />
+      </div> */}
       <div className="absolute hidden md:block -bottom-52 right-60 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(80%_0%,91%_92%,50%_100%,4%_50%)]"></div>
       <div className="absolute hidden md:block -bottom-1/2 right-3/4 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(20%_0%,91%_20%,50%_100%,4%_50%)]"></div>
       <div className="absolute hidden md:block -bottom-32 left-1/3 -z-10 w-56 h-56 bg-gradient-to-tr from-blue-950 to-secondary rounded-full [clip-path:polygon(20%_0%,91%_20%,50%_100%,4%_50%)]"></div>

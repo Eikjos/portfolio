@@ -112,3 +112,19 @@
     @apply bg-secondary text-white;
   }
 }
+
+::-webkit-scrollbar {
+  /* Customize the scrollbar width */
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  /* Customize the scrollbar track */
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  /* Customize the scrollbar thumb */
+  background-color: var(--primary);
+  border-radius: 45px;
+}
