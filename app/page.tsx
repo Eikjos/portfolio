@@ -63,6 +63,16 @@ export default function Home() {
               imageUrl="assets/Docker.png"
               imageAlt="Logo Docker"
             />
+            <ListItem
+              title="Kotlin"
+              imageUrl="assets/kotlin.png"
+              imageAlt="Logo Docker"
+            />
+            <ListItem
+              title="Swift"
+              imageUrl="assets/swift.png"
+              imageAlt="Logo Swift"
+            />
           </Card>
           <Card title="Projets">
             <ListItem
