@@ -89,7 +89,20 @@ export default function Home() {
               title="Proxiad Axe Seine"
               imageUrl="assets//proxiad.png"
               imageAlt="Logo Proxiad Axe Seine"
-              description="<h4 class='font-bold text-md'>Juin 2023 - aujourd'hui</h4>
+              description="<h4 class='font-bold text-md'>Septembre 2024- aujourd'hui</h4>
+              <span class='font-bold text-[10px]'>Ingénieur Étude et Développement</span>
+              <ul class='mt-2 pl-5'>
+                <li class='list-disc'>Développement d'application mobile</li>
+                <li class='list-disc'>Développement d'API</li>
+                <li class='list-disc'>Développement d'application cliente</li>
+              </ul>
+              "
+            />
+            <ListItem
+              title="Proxiad Axe Seine"
+              imageUrl="assets//proxiad.png"
+              imageAlt="Logo Proxiad Axe Seine"
+              description="<h4 class='font-bold text-md'>Juin 2023 - Septembre 2024</h4>
               <span class='font-bold text-[10px]'>Stagiaire + Alerternant développeur web et mobile</span>
               <ul class='mt-2 pl-5'>
                 <li class='list-disc'>Développement d'application mobile</li>
