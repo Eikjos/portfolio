@@ -1,0 +1,144 @@
+---
+const projects = [
+  {
+    year: "2025",
+    title: "Freeflow",
+    description: "Application destinée aux freelances, permettant de gérer leur entreprise — clients, factures, tâches, chiffres d'affaires et objectifs.",
+    tech: ["NestJS", "Next.js", "PostgreSQL", "Tailwind"],
+  },
+  {
+    year: "2024",
+    title: "Ollcavis",
+    description: "Plateforme d'avis sur un site e-commerce. Responsable technique du projet. Gestion d'avis et modération.",
+    tech: ["Spring Boot", "Angular", "Kafka", "PostgreSQL", "Docker"],
+  },
+  {
+    year: "2023",
+    title: "Open Observatory",
+    description: "Projet open-source permettant de partager des observations d'objets célestes. Gestion des utilisateurs et publications.",
+    tech: ["Spring Boot", "React", "PostgreSQL", "Tailwind", "Docker"],
+  },
+  {
+    year: "2022",
+    title: "Prise de rendez-vous",
+    description: "Plateforme de prise de rendez-vous pour des soutenances universitaires.",
+    tech: ["Spring Boot", "Thymeleaf", "PostgreSQL", "Bootstrap"],
+  },
+];
+---
+
+<section id="section-project">
+  <h2 class="section-title">Projets</h2>
+  <div class="project-list">
+    {projects.map((project) => (
+      <div class="project-card">
+        <div class="card-glass">
+          <div class="card-title-section">
+            <span class="project-year">{project.year}</span>
+            <h3 class="project-title">{project.title}</h3>
+          </div>
+          
+          <p class="project-description">{project.description}</p>
+
+          <div class="tech-stack">
+            {project.tech.map((t) => (
+              <span class="tech-tag">{t}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  #section-project {
+    padding: 50px 10% 10% 100px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    
+    /* Ton dégradé orange -> bleu de gauche à droite */
+    background: linear-gradient(
+      135deg, 
+      var(--primary-blue) 0%, 
+      var(--primary-orange) 25%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .project-list {
+    display: grid;
+    gap: 20px;
+  }
+
+  .card-glass {
+    background-color: var(--dark-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    height: 200px;
+  }
+
+  .card-glass:hover {
+    border-color: rgba(45, 212, 191, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .card-title-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .project-year {
+    color: var(--primary-orange);
+    background-color: var(--primary-orange-35);
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    color: white;
+  }
+
+  .project-description {
+    color: var(--text-dim);
+    height: 50px;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .tech-tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.7rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media(min-width: 768px) {
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,234 @@
+---
+const experiences = [
+  {
+    period: "Sept. 2024 — Aujourd'hui",
+    title: "Ingénieur étude et développement",
+    company: "Proxiad Axe Seine",
+    tasks: ["Conception d'API et d'interfaces graphiques", "Gestion de projet", "Maintenance applicative"],
+    tech: [".Net", "Spring Boot", "Angular", "React", "Kotlin", "Swift"],
+  },
+  {
+    period: "Juin 2023 — Sept. 2024",
+    title: "Alternant Ingénieur étude et développement",
+    company: "Proxiad Axe Seine",
+    tasks: ["Développement application mobile", "Gestion de projet", "Conception d'API et d'interfaces"],
+    tech: [".Net", "Spring Boot", "React", "React Native"],
+  },
+  {
+    period: "Avril 2022 — Juin 2023",
+    title: "Développeur Web",
+    company: "FTEL Edition",
+    tasks: ["Développement application mobile", "Conception d'API et d'interfaces graphiques"],
+    tech: [".Net", "Spring Boot", "React", "React Native"],
+  },
+];
+---
+
+<section id="experience-section" class="experience-container">
+  <h2 class="section-title gradient-text">Expériences</h2>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <div class="experience-list">
+      {experiences.map((exp) => (
+        <div class="exp-card">
+          <div class="timeline-dot"></div>
+
+          <div class="card-glass">
+            <span class="exp-period">{exp.period}</span>
+            <h3 class="exp-title">{exp.title}</h3>
+            <p class="exp-company">{exp.company}</p>
+            
+            <ul class="exp-tasks">
+              {exp.tasks.map((task) => (
+                <li>
+                  <span class="bullet">›</span> {task}
+                </li>
+              ))}
+            </ul>
+
+            <div class="tech-stack">
+              {exp.tech.map((t) => (
+                <span class="tech-tag">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-container {
+    padding: 10%;
+    max-width: 1024px; /* max-w-5xl */
+    overflow: hidden; /* Sécurité scroll horizontal */
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+
+  /* --- Timeline Logic --- */
+  .timeline-wrapper {
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      rgba(45, 212, 191, 0.4), /* teal-light */
+      rgba(249, 115, 22, 0.3),  /* orange/warm */
+      transparent
+    );
+  }
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .exp-card {
+    position: relative;
+    padding-left: 3rem;
+    opacity: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 14px;
+    top: 28px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #f97316; /* warm */
+    border: 2px solid var(--dark-bg, #0f172a);
+    z-index: 2;
+  }
+
+  /* --- Card Glassmorphism --- */
+  .card-glass {
+    background-color: var(--dark-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .card-glass:hover {
+    border-color: rgba(45, 212, 191, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .exp-period {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #2dd4bf; /* teal-light */
+    letter-spacing: 1px;
+  }
+
+  .exp-title {
+    font-size: 1.25rem;
+    color: white;
+    margin-top: 0.25rem;
+  }
+
+  .exp-company {
+    color: #f97316;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .exp-tasks {
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+  }
+
+  .exp-tasks li {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .bullet {
+    color: #2dd4bf;
+  }
+
+  /* --- Tech Tags --- */
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .tech-tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.7rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .timeline-wrapper { padding-left: 2rem; }
+    .timeline-line { left: 30px; }
+    .timeline-dot { left: 24px; }
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initExperienceAnim = () => {
+    const cards = document.querySelectorAll('.exp-card');
+    const section = document.querySelector('#experience-section');
+
+    if (!section || cards.length === 0) return;
+
+    // Reset immédiat au cas où (optionnel mais propre)
+    gsap.set(cards, { opacity: 0, x: -80 });
+
+    gsap.to(cards, { // On utilise .to() car on a fixé le départ avec .set ou le CSS
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        // "play" au premier passage, "none" en sortant, 
+        // "none" en revenant d'en bas, "none" en repartant.
+        // Si tu veux que ça se rejoue à chaque fois : "play none none reverse"
+        toggleActions: "play none none none", 
+      },
+      x: 0,
+      opacity: 1,
+      duration: 0.7,
+      stagger: 0.25,
+      ease: "power3.out",
+      // Force l'état final pour éviter qu'elles ne redisparaissent
+      overwrite: "auto" 
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', initExperienceAnim);
+  document.addEventListener('astro:after-swap', initExperienceAnim);
+</script>

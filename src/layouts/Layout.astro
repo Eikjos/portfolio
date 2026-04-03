@@ -1,23 +1,46 @@
-<!doctype html>
-<html lang="en">
+---
+
+---
+
+<html lang="fr">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Thomas Hamelin | Portfolio</title>
 	</head>
 	<body>
-		<slot />
+    <slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  /* On définit des variables pour éviter les répétitions */
+  :root {
+    --dark-bg: #0f172a;
+    --primary-blue: #3b82f6;
+    --primary-orange: #f57047;
+    --text-white: #ffffff;
+    --text-dim: #94a3b8;
+    --primary-orange-35:  hsla(8, 55%, 52%, 0.35);
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--dark-bg);
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      135deg, 
+      var(--primary-blue) 0%, 
+      var(--primary-orange) 25%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 </style>
