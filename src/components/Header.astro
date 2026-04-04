@@ -16,7 +16,7 @@ const cvPath = "/CV_ThomasHamelin.pdf";
         loading="eager"
         width={40}
       />
-      <span class="logo-text">Thomas<span class="gradient-text">Hamelin</span></span>
+      <span class="logo-text text-playwrite">Thomas<span class="gradient-text text-playwrite">Hamelin</span></span>
     </a>
 
     <nav class="nav-menu">
@@ -75,8 +75,8 @@ const cvPath = "/CV_ThomasHamelin.pdf";
 
   .logo-text {
     color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1rem;
     letter-spacing: -0.5px;
   }
 
@@ -110,7 +110,7 @@ const cvPath = "/CV_ThomasHamelin.pdf";
   }
 
   .nav-link:hover {
-    color: #3b82f6; /* Bleu au survol */
+    color: var(--primary-blue); /* Bleu au survol */
   }
 
   /* --- Bouton CV Stylisé --- */
@@ -118,12 +118,12 @@ const cvPath = "/CV_ThomasHamelin.pdf";
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, #f97316 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
     color: white;
     padding: 0.6rem 1.25rem;
     border-radius: 8px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);

@@ -9,6 +9,9 @@ import Header from '../components/Header.astro';
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&family=Story+Script&display=swap" rel="stylesheet">
 		<title>Thomas Hamelin | Portfolio</title>
 	</head>
 	<body>
@@ -34,6 +37,10 @@ import Header from '../components/Header.astro';
     background-color: var(--dark-bg);
   }
 
+  *, button, a {
+     font-family: 'Arial';
+  }
+
   .gradient-text {
     background: linear-gradient(
       135deg, 
@@ -43,5 +50,11 @@ import Header from '../components/Header.astro';
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .text-playwrite {
+    font-family: "Playwrite IE", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 </style>
