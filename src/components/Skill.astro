@@ -1,0 +1,135 @@
+---
+const skillGroups = [
+  {
+    category: "Frontend",
+    items: ["React (Vite/Next/Tanstack)", "Angular", "Vue (Nuxt)", "React Native"],
+  },
+  {
+    category: "Backend",
+    items: ["Spring Boot (Java/Kotlin)", "NestJS", "AdonisJS"],
+  },
+  {
+    category: "DevOps & Cloud",
+    items: ["Docker", "Azure DevOps", "AWS"],
+  },
+  {
+    category: "Mobile",
+    items: ["React Native", "Flutter", "Swift", "Kotlin"],
+  },
+];
+---
+
+<section id="skills-section" class="skills-container">
+  <h2 class="section-title gradient-text">Compétences</h2>
+
+    <div class="skills-grid">
+      {skillGroups.map((group) => (
+        <div class="skill-card">
+          <h3 class="category-title gradient-text">{group.category}</h3>
+          <ul class="skill-list">
+            {group.items.map((item) => (
+              <li class="skill-item">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+  </div>
+
+</section>
+
+<style>
+  .skills-container {
+    margin-top: 50px;
+    margin-inline: 10%;
+    overflow: hidden; /* Sécurité anti-scroll horizontal */
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+
+  /* --- Grille Responsive --- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  @media (min-width: 640px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .skill-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: color 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 32px;
+    border: 0.5px solid var(--text-dim);
+  }
+
+  .skill-item:hover {
+    color: var(--primary-orange);
+    border-color: var(--primary-orange);
+  }
+
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initSkillsAnim = () => {
+    const cards = document.querySelectorAll('.skill-card');
+    const section = document.querySelector('#skills-section');
+
+    if (!section || cards.length === 0) return;
+
+    // On utilise gsap.to() pour amener les cartes à leur état CSS final
+    gsap.to(cards, {
+      scrollTrigger: {
+        trigger: section,
+        start: "top 50%",
+        toggleActions: "play none none none",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.15, // Effet cascade rapide entre les cartes
+      ease: "power4.out",
+      overwrite: "auto"
+    });
+  };
+
+  // Support pour le chargement initial et le routage Astro
+  document.addEventListener('DOMContentLoaded', initSkillsAnim);
+  document.addEventListener('astro:after-swap', initSkillsAnim);
+</script>

@@ -53,7 +53,9 @@ const projects = [
 
 <style>
   #section-project {
-    padding: 50px 10% 10% 100px;
+    padding-inline: 10%;
+    margin-top: 50px;
+    margin-bottom: 100px;
   }
 
   .section-title {
@@ -139,6 +141,16 @@ const projects = [
     .project-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media(max-width: 768px) {
+    .card-glass {
+      height: 225px;
+    }
+
+    .project-description { 
+      height: 75px;
     }
   }
 </style>

@@ -1,22 +1,154 @@
 ---
-import Image from 'astro/components/Image.astro';
-import Logo from '../images/logo.svg';
+import { Image } from "astro:assets";
+import logo from "../images/logo.png";
+
+// Tu peux changer le lien vers ton fichier CV ici
+const cvPath = "/CV_ThomasHamelin.pdf";
+
 ---
 
-<header>
-  <nav>
-    <ul>
-      <li>CV</li>
-    </ul>
-  </nav>
+<header class="main-header">
+  <div class="header-container">
+    <a href="/" class="logo-group" aria-label="Accueil">
+      <Image 
+        src={logo} 
+        alt="Thomas Hamelin" 
+        loading="eager"
+        width={40}
+      />
+      <span class="logo-text">Thomas<span class="gradient-text">Hamelin</span></span>
+    </a>
+
+    <nav class="nav-menu">
+      <ul class="nav-list">
+       <!--  <li><a href="/blog" class="nav-link">Blog</a></li> -->
+        <li>
+          <a href={cvPath} target="_blank" class="cv-button">
+            <span>Mon CV</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <style>
-  header {
-    height: 50px;
-    position: sticky;
+  .main-header {
+    position: fixed;
     top: 0;
-    z-index: 1001;
-    background-color: rgba(255, 255, 255, 0.05);
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.7); /* Fond sombre transparent */
+    backdrop-filter: blur(12px); /* Effet de flou sur le contenu de derrière */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* --- Styles du Logo --- */
+  .logo-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-group:hover {
+    transform: translateY(-2px);
+  }
+
+  .logo-th {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-text span {
+    color: #94a3b8; /* Couleur muted */
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+  /* --- Navigation --- */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #3b82f6; /* Bleu au survol */
+  }
+
+  /* --- Bouton CV Stylisé --- */
+  .cv-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #f97316 0%, #3b82f6 100%);
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+  }
+
+  .cv-button svg {
+    display: none;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 640px) {
+    .logo-text {
+      display: none; /* On ne garde que l'icône sur petit mobile */
+    }
+    .nav-list {
+      gap: 1.25rem;
+    }
+    .cv-button span {
+      display: none; /* Juste l'icône download sur mobile */
+    }
+    .cv-button svg {
+      display: block; /* Juste l'icône download sur mobile */
+    }
+    .cv-button {
+      padding: 0.6rem;
+    }
   }
 </style>
