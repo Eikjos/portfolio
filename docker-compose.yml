@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/${GITHUB_REPOSITORY}:latest
+    image: ghcr.io/eikjos/portfolio:latest
     container_name: portfolio
     restart: unless-stopped
     ports:
