@@ -45,6 +45,7 @@ jobs:
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
+    environment: ssh
     steps:
       - name: Checkout repository (nécessaire pour copier le compose)
         uses: actions/checkout@v4
