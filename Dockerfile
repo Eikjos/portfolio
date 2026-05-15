@@ -20,7 +20,7 @@ RUN pnpm install --frozen-lockfile
 # Étape de build
 FROM build-deps AS build
 COPY . .
-RUN pnpm run build
+RUN pnpm run build 
 
 # Étape finale (runtime)
 FROM base AS runtime
