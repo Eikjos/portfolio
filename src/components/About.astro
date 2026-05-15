@@ -1,0 +1,104 @@
+---
+/* Les imports côté serveur (vide ici car pas de data externe) */
+---
+<section class="section-about">
+  <h1 class="section-title">À propos</h1>
+  <p class="description">
+    Développeur passionné avec une appétence pour le développement d'applications web et mobile.
+    Mes spécialités sont la maîtrise de différentes technologies dans l'univers JavaScript et Java.
+    Curieux d'explorer de nouvelles technologies.
+  </p>
+  <p class="description mt-4">
+    Diplômé d'un <span class="highlight">Master Informatique en Génie Logiciel (GIL)</span> de l'Université de Rouen Normandie.
+  </p>
+</section>
+
+<style>
+
+  .section-about {
+    padding: 0 10%;
+  }
+
+  /* --- Titre avec le dégradé que tu as demandé --- */
+  .section-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    
+    /* Ton dégradé orange -> bleu de gauche à droite */
+    background: linear-gradient(
+      135deg, 
+      var(--primary-blue) 0%, 
+      var(--primary-orange) 25%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* --- Texte --- */
+  .description {
+    color: var(--text-dim); /* Utilise tes variables */
+    font-size: 1.2rem;
+    line-height: 1.625;
+  }
+
+  .mt-4 {
+    margin-top: 1rem;
+  }
+
+  .highlight {
+    color: var(--primary-orange); /* Orange */
+    font-weight: 500;
+  }
+
+  /* --- Badge --- */
+  .language-badge {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(45, 212, 191, 0.3); /* teal-light/30 */
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  /* --- Préparation GSAP (évite le flash) --- */
+  .about-content {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  // Enregistrement du plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initAboutAnim = () => {
+    // On sélectionne tous les éléments à animer
+    const items = document.querySelectorAll('.about-content');
+    const triggerElement = document.querySelector('#about-section');
+
+    if (!triggerElement || items.length === 0) return;
+
+    gsap.from(items, {
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "top 75%",
+        // toggleActions: "play none none reverse" // Optionnel: rejoue l'anim au scroll back
+      },
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+  };
+
+  // Support pour le chargement initial et les View Transitions d'Astro
+  document.addEventListener('DOMContentLoaded', initAboutAnim);
+  document.addEventListener('astro:after-swap', initAboutAnim);
+</script>

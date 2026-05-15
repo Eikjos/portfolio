@@ -1,0 +1,60 @@
+---
+import Header from '../components/Header.astro';
+---
+
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&family=Story+Script&display=swap" rel="stylesheet">
+		<title>Thomas Hamelin | Portfolio</title>
+	</head>
+	<body>
+    <Header />
+    <slot />
+	</body>
+</html>
+
+<style is:global>
+  /* On définit des variables pour éviter les répétitions */
+  :root {
+    --dark-bg: #0f172a;
+    --primary-blue: #3b82f6;
+    --primary-orange: #f57047;
+    --text-white: #ffffff;
+    --text-dim: #94a3b8;
+    --primary-orange-35:  hsla(8, 55%, 52%, 0.35);
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--dark-bg);
+  }
+
+  *, button, a {
+     font-family: 'Arial';
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      135deg, 
+      var(--primary-blue) 0%, 
+      var(--primary-orange) 25%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-playwrite {
+    font-family: "Playwrite IE", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+</style>
