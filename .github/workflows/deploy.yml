@@ -76,7 +76,6 @@ jobs:
             # On se déplace dans le dossier de l'application
             cd ${{ vars.DEPLOY_PATH }}
             
-            
             # Connexion au registre
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             

@@ -5,7 +5,6 @@ services:
     restart: unless-stopped
     ports:
       - "4321:4321"
-    env_file: .env
     logging:
       driver: "json-file"
       options:
